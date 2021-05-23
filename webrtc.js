@@ -1,11 +1,12 @@
 const buttonElm = document.querySelector('button');
 const videoElm = document.querySelector('video');
+const codeElm = document.querySelector('code');
 
 const getDeviceInfo = () => {
   navigator.mediaDevices
     .enumerateDevices()
     .then(function (devices) {
-      console.log(devices);
+      codeElm.innerText = JSON.stringify(devices);
       devices.forEach(function (device) {
         console.log(device.kind + ': ' + device.label + ' id = ' + device.deviceId);
       });
@@ -26,8 +27,8 @@ const getStream = () => {
 
   navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
     videoElm.srcObject = stream;
+    getDeviceInfo();
   });
 };
 
-document.addEventListener('DOMContentLoaded', getDeviceInfo);
 buttonElm.addEventListener('click', getStream);

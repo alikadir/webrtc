@@ -7,12 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WebRTC</title>
     <script defer src="webrtc.js"></script>
+    <link rel="stylesheet" href="tailwind.min.css">
+
 </head>
-<body>
+<body class="p-5">
 <h2>WebRTC</h2>
-<button>Start Video and Audio Stream</button>
-<p>
-    <video></video>
+<button class="border border-gray-300 p-2 shadow rounded hover:shadow-none mt-3">Start Video and Audio Stream</button>
+<p class="mt-5">
+    <video class="rounded-2xl shadow"></video>
 </p>
+
+<h2 class="m-4">Microphone and camera devices,</h2>
+<code class="font-light text-gray-600"></code>
+
 </body>
 </html>
